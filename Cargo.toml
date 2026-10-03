@@ -1,0 +1,21 @@
+[package]
+name = "dacantus"
+version = "1.0.0"
+edition = "2024"
+authors = ["Kacefier"]
+description = "Encode arbitrary files into audio and decode them back losslessly."
+license = "GPL-3.0-or-later"
+
+[[bin]]
+name = "dacantus"
+path = "src/main.rs"
+
+[dependencies]
+anyhow = "1.0"
+hound = "3.5"
+crc32fast = "1.4"
+thiserror = "1.0"
+
+[profile.release]
+lto = true
+codegen-units = 1
